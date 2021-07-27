@@ -1,0 +1,52 @@
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  .input {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+
+    .text {
+      width: 50px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      flex: 1;
+      border-radius: 6px;
+      outline: none;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      width: 120px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      padding: 15px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+
+      &:hover {
+        color: white;
+        background-color: rgba(209, 196, 233, 0.5);
+      }
+    }
+
+  }
+}
