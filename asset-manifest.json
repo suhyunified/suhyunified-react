@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/suhyunified-react/static/css/main.ff499e79.chunk.css",
+    "main.js": "/suhyunified-react/static/js/main.e79bf425.chunk.js",
+    "main.js.map": "/suhyunified-react/static/js/main.e79bf425.chunk.js.map",
+    "runtime-main.js": "/suhyunified-react/static/js/runtime-main.59c69c9c.js",
+    "runtime-main.js.map": "/suhyunified-react/static/js/runtime-main.59c69c9c.js.map",
+    "static/js/2.1c257658.chunk.js": "/suhyunified-react/static/js/2.1c257658.chunk.js",
+    "static/js/2.1c257658.chunk.js.map": "/suhyunified-react/static/js/2.1c257658.chunk.js.map",
+    "static/js/3.2c4de806.chunk.js": "/suhyunified-react/static/js/3.2c4de806.chunk.js",
+    "static/js/3.2c4de806.chunk.js.map": "/suhyunified-react/static/js/3.2c4de806.chunk.js.map",
+    "index.html": "/suhyunified-react/index.html",
+    "static/css/main.ff499e79.chunk.css.map": "/suhyunified-react/static/css/main.ff499e79.chunk.css.map",
+    "static/js/2.1c257658.chunk.js.LICENSE.txt": "/suhyunified-react/static/js/2.1c257658.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/suhyunified-react/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.59c69c9c.js",
+    "static/js/2.1c257658.chunk.js",
+    "static/css/main.ff499e79.chunk.css",
+    "static/js/main.e79bf425.chunk.js"
+  ]
+}
