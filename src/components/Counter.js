@@ -1,12 +1,10 @@
 import React, { useCallback, useState } from 'react'
 import './Counter.scss';
 
-function Counter() {
-  const [number ,setNumber] = useState(0)
-
-  const onChange = useCallback(number => {
-    setNumber(prev => prev + number)
-  }, [])
+function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
+  const onChange = e => {
+    onSetDiff(+e.target.value)
+  }
 
   return (
     <section className="counter-wrapper">
@@ -15,8 +13,9 @@ function Counter() {
         <div className="contents">
           <h1 className="result"> {number} </h1>
           <div className="button-wrapper">
-            <button onClick={() => onChange(1)}> + 1 </button>
-            <button onClick={() => onChange(-1)}> - 1 </button>
+            <input value={diff} onChange={onChange}></input>
+            <button onClick={onIncrease}> INCERASE </button>
+            <button onClick={onDecrease}> DECREASE </button>
           </div>
         </div>
       </div>

@@ -8,8 +8,9 @@ import Input from './components/Input/Input';
 import InputSample from './InputSample'
 import CreateUser from './components/CreateUser'
 import UserList from './UserList'
-import TodoLayout from 'layout/TodoLayout'
 import HomeLayout from 'layout/HomeLayout'
+import BasicLayout from 'layout/BasicLayout';
+import TodoContainer from 'containers/TodoContainer';
 
 function CountActiveUsers(users){
   return users.filter(user => user.active).length
@@ -90,7 +91,8 @@ function App() {
     <div className="App">
       <Header name="My React" /> 
       <Route path="/" exact component={HomeLayout}></Route>
-      <Route path="/todo" component={TodoLayout}></Route>
+      <Route path="/basic" component={BasicLayout}></Route>
+      <Route path="/todo" component={TodoContainer}></Route>
       {/* <TodoLayout></TodoLayout> */}
       {/* <Counter></Counter>
       <Input></Input>

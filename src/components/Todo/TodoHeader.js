@@ -1,4 +1,3 @@
-import { useTodoState } from 'context/TodoContext';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -26,8 +25,7 @@ const TodoHeaderBlock = styled.div`
   }
 `
 
-function TodoHeader() {
-  const todos = useTodoState()
+function TodoHeader({ todos }) {
   const undoneTasks = todos.filter(todo => !todo.done)
 
   const today = new Date();

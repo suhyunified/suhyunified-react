@@ -1,7 +1,6 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import TodoItem from 'components/Todo/TodoItem'
-import { useTodoState } from 'context/TodoContext'
 
 const TodoListBlock = styled.div`
   flex: 1;
@@ -11,9 +10,7 @@ const TodoListBlock = styled.div`
   background-color: #CFD8DC;
 `
 
-function TodoList() {
-  const todos = useTodoState()
-
+function TodoList({todos, onDelete, onToggle}) {
   return(
     <TodoListBlock>
       {todos.map(todo => 
@@ -22,6 +19,8 @@ function TodoList() {
           id={todo.id}
           done={todo.done} 
           text={todo.text}
+          onDelete={onDelete}
+          onToggle={onToggle}
         ></TodoItem>
       )}
     </TodoListBlock>

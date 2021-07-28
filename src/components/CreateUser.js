@@ -1,5 +1,4 @@
-import { findLastIndex } from 'lodash'
-import React, { useState } from 'react'
+import React from 'react'
 
 function CreateUser({username, email, onChange, onCreate}) {
 
@@ -24,7 +23,7 @@ function CreateUser({username, email, onChange, onCreate}) {
         
         placeholder="email"
       ></input>
-      <button onClick={onCreate}>CREATE</button>
+      <button onClick={() => onCreate}>CREATE</button>
     </div>
   )
 }

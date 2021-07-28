@@ -1,7 +1,6 @@
 import TodoCreate from 'components/Todo/TodoCreate';
 import TodoHeader from 'components/Todo/TodoHeader';
 import TodoList from 'components/Todo/TodoList';
-import { TodoProvider } from 'context/TodoContext';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -21,15 +20,21 @@ const TodoLayoutBlock = styled.div`
   border-radius: 6px;
 `
 
-function TodoLayout() {
+function TodoLayout({ todos, onCreate, onDelete, onToggle }) {
   return (
-    <TodoProvider>
-      <TodoLayoutBlock>
-        <TodoHeader></TodoHeader>
-        <TodoList></TodoList>
-        <TodoCreate></TodoCreate>
-      </TodoLayoutBlock>
-    </TodoProvider>
+    <TodoLayoutBlock>
+      <TodoHeader
+        todos={todos}
+      ></TodoHeader>
+      <TodoList
+        todos={todos}
+        onDelete={onDelete}
+        onToggle={onToggle}
+      ></TodoList>
+      <TodoCreate
+        onCreate={onCreate}
+      ></TodoCreate>
+    </TodoLayoutBlock>
   )
 }
 

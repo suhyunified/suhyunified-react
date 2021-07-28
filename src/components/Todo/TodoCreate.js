@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import styled, { css } from 'styled-components'
 import { MdAdd } from 'react-icons/md';
-import { useTodoDispatch, useTodoNextId } from 'context/TodoContext';
 
 const CircleButton = styled.div`
   position: absolute;
@@ -72,34 +71,25 @@ const Input = styled.input`
   background-color: white;
 `
 
-function TodoCreate() {
+function TodoCreate({onCreate}) {
 
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState('')
-  
-  const dispatch = useTodoDispatch()
-  const nextId = useTodoNextId()
 
   const toggleInput = () => {
     setOpen(prev => !prev)
   }
 
   const onInput = (e) => setValue(e.target.value)
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const todo = {
-      id: nextId.current,
-      text: value,
-      done: false
-    }
-    dispatch( { type: 'CREATE', todo })
+  const onSubmit = e => {
+    e.preventDefault()
+    onCreate(value)
     setValue('')
-    nextId.current += 1
   }
 
   return(
     <>
-      <CircleButton onClick={toggleInput} open={open}>
+      <CircleButton onClick={() => toggleInput()} open={open}>
         <MdAdd />
       </CircleButton>
 
@@ -107,9 +97,9 @@ function TodoCreate() {
         <InsertForm open={open} onSubmit={onSubmit}>
           <Input 
             autoFocus 
-            placeholder="할 일을 입력해주세요"
             value={value}
             onChange={onInput}
+            placeholder="할 일을 입력해주세요"
           ></Input>
         </InsertForm>
       </InsertFormPositioner>
